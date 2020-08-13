@@ -1,0 +1,7 @@
+package comp1110.lectures.O04;
+
+public class Dog extends Mammal {
+    public Dog(String name, int age) {
+        super(name, age);
+    }
+}
