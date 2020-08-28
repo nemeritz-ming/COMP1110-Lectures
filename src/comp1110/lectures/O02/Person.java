@@ -1,6 +1,6 @@
 package comp1110.lectures.O02;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private int age;
     private String name;
 
@@ -19,5 +19,12 @@ public class Person {
     @Override
     public String toString() {
         return name + " is aged " + age;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        if (age == other.age)
+            return name.compareTo(other.name);
+        return age - other.age;
     }
 }

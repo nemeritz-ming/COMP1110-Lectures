@@ -45,6 +45,25 @@ public class ClassList {
         for (COMP1110Student student : uidmap.values()) {
             System.out.println("From map: "+student);
         }
+
+        students.add(sue);
+        Collections.sort(students);
+        System.out.println("All students natural order");
+        for (COMP1110Student student : students) {
+            System.out.println("From sorted list: "+student);
+        }
+
+        Collections.sort(students, (COMP1110Student s1, COMP1110Student s2) -> { return s1.getUid().compareTo(s2.getUid());});
+        System.out.println("All students UID order");
+        for (COMP1110Student student : students) {
+            System.out.println("From sorted list: "+student);
+        }
+
+        Collections.sort(students, (COMP1110Student s1, COMP1110Student s2) -> { return s1.mark() - s2.mark();});
+        System.out.println("All students grade order");
+        for (COMP1110Student student : students) {
+            System.out.println("From sorted list: "+student);
+        }
     }
 
 

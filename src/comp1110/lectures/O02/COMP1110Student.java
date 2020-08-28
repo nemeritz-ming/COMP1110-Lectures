@@ -21,7 +21,7 @@ public class COMP1110Student extends Student {
     private int redeem(int mark, int outOf) {
         return Math.max(mark, outOf*exam/100);
     }
-    private int mark() {
+    public int mark() {
         return redeem(ass1, 5) + ass2 + redeem(ce, 5) + redeem(labtest, 5) + redeem(mse, 10) + exam/2;
     }
     @Override
