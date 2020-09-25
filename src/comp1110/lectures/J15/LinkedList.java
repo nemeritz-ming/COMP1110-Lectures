@@ -1,4 +1,4 @@
-package comp1110.lectures.A02;
+package comp1110.lectures.J15;
 
 public class LinkedList<T> implements List<T> {
 
@@ -40,6 +40,8 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public T remove(int index) {
+        if (index < 0 || index >= elements)
+            throw new IndexOutOfBoundsException();
         T rtn;
         if (index == 0) {
             rtn = first.value;
@@ -73,6 +75,8 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public T get(int index) {
+        if (index < 0 || index >= elements)
+            throw new IndexOutOfBoundsException();
         return getLLN(first, index).value;
     }
 
