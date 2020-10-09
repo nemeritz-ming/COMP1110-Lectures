@@ -109,10 +109,21 @@ public class HashDemo extends Application {
         readData();
 
         /* hashing integers */
-		integerHash(Color.GREEN, (key, buckets) -> 0);
+		// integerHash(Color.GREEN, (key, buckets) -> 0);
+       //integerHash(Color.LIGHTGREEN, (key, buckets) -> key % buckets);
+        //integerHash(Color.LIMEGREEN, (key, buckets) -> (key/10) % buckets);
 
         /* hashing strings */
-        stringHash(Color.RED, (key, buckets) -> 0);
+        // stringHash(Color.RED, (key, buckets) -> 0);
+        stringHash(Color.PINK, (key, buckets) -> { return key.charAt(0)%buckets;});
+        stringHash(Color.PURPLE, (key, buckets) -> {
+            int sum = 0;
+            for (int i = 0; i < key.length(); i++) {
+                sum += key.charAt(i);
+            }
+            return sum%buckets;});
+        stringHash(Color.ORANGE, (key, buckets) -> { return Math.abs(key.hashCode()%buckets);});
+
     }
 
     /**
