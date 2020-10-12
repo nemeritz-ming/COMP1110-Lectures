@@ -1,6 +1,6 @@
 package comp1110.lectures.A04;
 
-public class TreeSet<T> implements Set<T> {
+public class BSTSet<T> implements Set<T> {
     @Override
     public void add(T element) {
 

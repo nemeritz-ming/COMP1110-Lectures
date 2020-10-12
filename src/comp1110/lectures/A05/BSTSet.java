@@ -1,6 +1,6 @@
 package comp1110.lectures.A05;
 
-public class TreeSet<T> implements Set<T> {
+public class BSTSet<T> implements Set<T> {
 
     BSTree tree;
     int elements;
@@ -71,7 +71,7 @@ public class TreeSet<T> implements Set<T> {
     }
 
     @Override
-    public void add(T element) {
+    public void put(T element) {
         if (element == null) {   // for null, don't use the tree, just use the special boolean
             if (!containsNull) {
                 containsNull = true;

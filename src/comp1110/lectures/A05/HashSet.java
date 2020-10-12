@@ -15,7 +15,7 @@ public class HashSet<T> implements Set<T> {
     }
 
     @Override
-    public void add(T element) {
+    public void put(T element) {
         int bkt = hash(element);
         LinkedList<T> ll = table[bkt];
         if (ll == null) {

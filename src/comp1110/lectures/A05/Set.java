@@ -5,7 +5,7 @@ public interface Set<T> {
      * Add a value to the set if it does not already exist.
      * @param element The value to be added.
      */
-    void add(T element);
+    void put(T element);
 
     /**
      * Remove the specified value from the set.

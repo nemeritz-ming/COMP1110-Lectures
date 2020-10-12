@@ -10,7 +10,7 @@ public class SetTest {
     @Test
     public void testAdd() {
         // only assume that size() works, and toString() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
         set.add("Alice");
         assertTrue(set.size() == 1);
@@ -33,7 +33,7 @@ public class SetTest {
     @Test
     public void testAddNull() {
         // only assume that size() works, and toString() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
         set.add(null);
         assertTrue(set.size() == 1);
@@ -57,7 +57,7 @@ public class SetTest {
     @Test
     public void testContains() {
         // only assume that size() works, toString() works, and add() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
         set.add("Alice");
         assertTrue(set.size() == 1);
@@ -89,7 +89,7 @@ public class SetTest {
     @Test
     public void testRemove() {
         // only assume that size() works, toString() works, add() works and contains() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
         set.add("Alice");
         assertTrue(set.size() == 1);

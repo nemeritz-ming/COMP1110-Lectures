@@ -10,46 +10,46 @@ public class SetTest {
     @Test
     public void testAdd() {
         // only assume that size() works, and toString() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("Alice, Bob") || set.toString().equals("Bob, Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("Alice, Bob") || set.toString().equals("Bob, Alice"));
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.size() == 3);
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.size() == 3);
     }
 
     @Test
     public void testAddNull() {
         // only assume that size() works, and toString() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
-        set.add(null);
+        set.put(null);
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("null"));
-        set.add(null);
+        set.put(null);
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("null"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("null, Bob") || set.toString().equals("Bob, null"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("null, Bob") || set.toString().equals("Bob, null"));
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.size() == 3);
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.size() == 3);
     }
 
@@ -57,41 +57,41 @@ public class SetTest {
     @Test
     public void testContains() {
         // only assume that size() works, toString() works, and add() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
         assertTrue(set.contains("Alice"));
         assertFalse(set.contains("Bob"));
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.contains("Alice"));
         assertTrue(set.contains("Bob"));
         assertFalse(set.contains("Cindy"));
 
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("Alice, Bob") || set.toString().equals("Bob, Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("Alice, Bob") || set.toString().equals("Bob, Alice"));
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.contains("Alice"));
         assertTrue(set.contains("Bob"));
         assertTrue(set.contains("Cindy"));
         assertTrue(set.size() == 3);
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.size() == 3);
     }
 
     @Test
     public void testRemove() {
         // only assume that size() works, toString() works, add() works and contains() works
-        Set<String> set = HASH_SET ? new HashSet<>() : new TreeSet<>();
+        Set<String> set = HASH_SET ? new HashSet<>() : new BSTSet<>();
         assertTrue(set.size() == 0);
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
         assertTrue(set.contains("Alice"));
@@ -100,20 +100,20 @@ public class SetTest {
         set.remove("Bob");
         set.remove("Cindy");
         assertTrue(set.size() == 0);
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Alice");
+        set.put("Alice");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.contains("Alice"));
         assertTrue(set.contains("Bob"));
         assertFalse(set.contains("Cindy"));
 
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("Alice, Bob") || set.toString().equals("Bob, Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.size() == 2);
         assertTrue(set.toString().equals("Alice, Bob") || set.toString().equals("Bob, Alice"));
 
@@ -122,25 +122,25 @@ public class SetTest {
         set.remove("Cindy");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Bob");
+        set.put("Bob");
         assertTrue(set.contains("Alice"));
         assertTrue(set.contains("Bob"));
         assertFalse(set.contains("Cindy"));
 
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.contains("Alice"));
         assertTrue(set.contains("Bob"));
         assertTrue(set.contains("Cindy"));
         assertTrue(set.size() == 3);
-        set.add("Cindy");
+        set.put("Cindy");
         assertTrue(set.size() == 3);
         // set.remove("Alice");
         set.remove("Bob");
         set.remove("Cindy");
         assertTrue(set.size() == 1);
         assertTrue(set.toString().equals("Alice"));
-        set.add("Bob");
-        set.add("Cindy");
+        set.put("Bob");
+        set.put("Cindy");
         assertTrue(set.contains("Alice"));
         assertTrue(set.contains("Bob"));
         assertTrue(set.contains("Cindy"));
