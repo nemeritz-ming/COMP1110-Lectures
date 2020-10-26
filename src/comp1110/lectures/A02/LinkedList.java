@@ -51,7 +51,7 @@ public class LinkedList<T> implements List<T> {
             LLN target = prior.next;
             rtn = target.value;
             prior.next = target.next;
-            if (prior.next == null)
+            if (last == target)
                 last = prior;
         }
 
