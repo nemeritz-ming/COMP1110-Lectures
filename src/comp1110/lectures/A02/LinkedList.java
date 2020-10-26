@@ -52,7 +52,7 @@ public class LinkedList<T> implements List<T> {
             rtn = target.value;
             prior.next = target.next;
             if (prior.next == null)
-                last = null;
+                last = prior;
         }
 
         elements--;
